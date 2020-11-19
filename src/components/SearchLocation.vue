@@ -52,6 +52,7 @@ form button {
   border: 0;
   background-color: #ff591d;
   flex-grow: 0;
+  cursor: pointer;
 }
 button img {
   width: 60%;
@@ -59,7 +60,7 @@ button img {
 @media screen and (max-width: 640px) {
   form {
     width: calc(100% - 40px);
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 }
 </style>

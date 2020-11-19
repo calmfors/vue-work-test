@@ -1,8 +1,18 @@
 <template>
-  <div id="container">
-    <search-location @get-location="getLocation"></search-location>
-    <info-container :location="choosenLocation"></info-container>
-    {{ errorMessage }}
+  <div>
+    <main id="container">
+      <search-location @get-location="getLocation"></search-location>
+      <info-container :location="choosenLocation"></info-container>
+      {{ errorMessage }}
+    </main>
+    <footer>
+      <button @click="showInfo = !showInfo">Om tjänsten</button>
+      <p v-if="showInfo">
+        All information om städerna är hämtad från Wikipedia. Duis augue dolor,
+        tempus sit amet nunc eget, aliquet porttitor eros. Cras porta ac odio
+        lacinia tristique.
+      </p>
+    </footer>
   </div>
 </template>
 
@@ -18,6 +28,7 @@ export default {
       errorMessage: "",
       choosenLocation: "",
       locationInfo: locations,
+      showInfo: false,
     };
   },
   components: {
@@ -61,6 +72,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+footer button {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  margin-top: 20px;
+  cursor: pointer;
+}
+footer p {
+  font-size: 14px;
+  max-width: 600px;
+  padding: 0 15px 0 15px;
 }
 @media screen and (max-width: 640px) {
   #container {

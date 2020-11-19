@@ -58,7 +58,7 @@ h2 {
 }
 #box img {
   max-width: 90%;
-  margin: 0 0 5px 20px;
+  margin-left: 20px;
 }
 #arrowcontainer {
   width: 50%;
@@ -76,7 +76,8 @@ h2 {
   width: 150px;
   height: 48px;
   padding: 0;
-  margin: 0;
+  margin: 10px 0 0 0;
+  cursor: pointer;
 }
 #arrow h2 {
   margin: 0;
