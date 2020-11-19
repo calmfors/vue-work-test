@@ -6,7 +6,9 @@
       v-model="searchWord"
       placeholder="Ange stad eller land"
     />
-    <button><img src="../assets/search.svg" /></button>
+    <button>
+      <img src="../assets/search.svg" />
+    </button>
   </form>
 </template>
 
@@ -20,7 +22,7 @@ export default {
   emits: ["searchWord"],
   methods: {
     postSearchWord() {
-      this.$emit("get-location", this.searchWord);
+      this.$emit("get-location", this.searchWord.trim().toLowerCase());
       this.searchWord = "";
     },
   },
@@ -32,7 +34,7 @@ form {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  width: 50%;
+  width: calc(50% - 60px);
 }
 input {
   font-family: "Poppins", sans-serif;
@@ -40,6 +42,7 @@ input {
   background-color: #eee;
   padding: 15px;
   border: none;
+  width: calc(100% - 60px);
   flex-grow: 1;
 }
 input:placeholder-shown {

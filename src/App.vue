@@ -3,11 +3,11 @@
     <main id="container">
       <search-location @get-location="getLocation"></search-location>
       <info-container :location="choosenLocation"></info-container>
-      {{ errorMessage }}
+      <p id="error">{{ errorMessage }}</p>
     </main>
     <footer>
       <button @click="showInfo = !showInfo">Om tjänsten</button>
-      <p v-if="showInfo">
+      <p :style="{ maxHeight: showInfo ? '100px' : '0' }">
         All information om städerna är hämtad från Wikipedia. Duis augue dolor,
         tempus sit amet nunc eget, aliquet porttitor eros. Cras porta ac odio
         lacinia tristique.
@@ -39,12 +39,13 @@ export default {
     getLocation(searchWord) {
       this.errorMessage = "";
       if (
-        this.locationInfo.find(
-          (location) => location.name.toLowerCase() === searchWord.toLowerCase()
+        searchWord.length > 2 &&
+        this.locationInfo.find((location) =>
+          location.name.toLowerCase().includes(searchWord)
         )
       ) {
-        this.choosenLocation = this.locationInfo.filter(
-          (location) => location.name.toLowerCase() === searchWord.toLowerCase()
+        this.choosenLocation = this.locationInfo.filter((location) =>
+          location.name.toLowerCase().includes(searchWord)
         )[0];
       } else {
         this.choosenLocation = "";
@@ -73,12 +74,18 @@ body {
   flex-direction: column;
   align-items: center;
 }
+#error {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0;
+}
 footer {
+  height: auto;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 footer button {
   font-family: "Poppins", sans-serif;
@@ -93,6 +100,8 @@ footer p {
   font-size: 14px;
   max-width: 600px;
   padding: 0 15px 0 15px;
+  overflow: hidden;
+  transition-duration: 0.3s;
 }
 @media screen and (max-width: 640px) {
   #container {

@@ -47,6 +47,8 @@ export default {
 h2 {
   font-weight: 600;
   font-size: 24px;
+  line-height: 28px;
+  margin: 10px 0 10px 0;
 }
 #box {
   display: flex;
@@ -58,7 +60,7 @@ h2 {
 }
 #box img {
   max-width: 90%;
-  margin-left: 20px;
+  margin: 5px 0 0 20px;
 }
 #arrowcontainer {
   width: 50%;
@@ -77,6 +79,7 @@ h2 {
   height: 48px;
   padding: 0;
   margin: 10px 0 0 0;
+  border: none;
   cursor: pointer;
 }
 #arrow h2 {

@@ -61,7 +61,7 @@ h1 span {
     flex-wrap: wrap;
   }
   h1 {
-    line-height: 60px;
+    line-height: 50px;
   }
 }
 </style>
