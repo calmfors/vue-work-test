@@ -86,7 +86,7 @@ footer button {
   background-color: transparent;
   border: none;
   text-decoration: underline;
-  margin-top: 20px;
+  margin-top: 22px;
   cursor: pointer;
 }
 footer p {
