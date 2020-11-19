@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "London",
+    "info": [
+      {
+        "title": "Hamnstaden vid Themsen",
+        "text": "London är huvudstaden i Storbritannien. Staden grundades under namnet Londinium som huvudstad i den romerska provinsen Britannia, för vilken den också utgjorde hamnstad vid floden Themsen.",
+        "img": "london.jpg"
+      },
+      {
+        "title": "City of London",
+        "text": "City of London är Londons historiska centrum och är en egen stad inom Storlondon, med speciella rättigheter som Storlondons 32 kommuner (boroughs) inte åtnjuter.",
+        "img": ""
+      },
+      {
+        "title": "Finansiellt centrum",
+        "text": "London är ett av världens största finansiella centra inom internationella affärer och internationell handel. Tillsammans med New York ses London som det viktigaste finanscentrat i världen.",
+        "blue": true,
+        "img": ""
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Stockholm",
+    "info": [
+      {
+        "title": "Nordens största stad",
+        "text": "Stockholm är Sveriges huvudstad samt landets kulturella, politiska, mediala och ekonomiska centrum. Det är Sveriges såväl som Nordens folkrikaste tätort.",
+        "blue": true,
+        "img": ""
+      },
+      {
+        "title": "Världsarv",
+        "text": "Tre av Unescos världsarv ligger i Stockholmsområdet; Drottningholms slott och Birka (båda i Ekerö kommun), samt Skogskyrkogården (Stockholms kommun).",
+        "img": ""
+      },
+      {
+        "title": "Gamla stan - staden mellan broarna",
+        "text": "Under flera hundra år utgjorde Gamla stan den egentliga staden. Stadsdelen bildades 1926 och hade år 2006 cirka 3 000 invånare. På Gamla stans norra spets återfinns Stockholms slott.",
+        "img": "stockholm.jpg"
+      }
+    ]
+  }
+]
