@@ -1,6 +1,7 @@
 <template>
   <div>
     <img
+      id="boximg"
       v-if="img && windowWidth < '640'"
       :style="{ width: '100%' }"
       :src="img"
@@ -11,18 +12,18 @@
         {{ text }}
       </p>
       <div v-if="img" id="arrowcontainer">
-        <img v-if="windowWidth > '640'" :src="img" />
-        <button id="arrow">
-          <h2>Läs mer</h2>
-          <img src="../assets/arrow.svg" />
-        </button>
+        <img id="boximg" v-if="windowWidth > '640'" :src="img" />
+        <read-more />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import ReadMore from "./ReadMore.vue";
+
 export default {
+  components: { "read-more": ReadMore },
   data() {
     return {
       windowWidth: window.innerWidth,
@@ -58,36 +59,9 @@ h2 {
   padding: 0;
   margin: 0;
 }
-#box img {
+#boximg {
   max-width: 90%;
   margin: 5px 0 0 20px;
-}
-#arrowcontainer {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-#arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #4a4a4a;
-  color: #fff;
-  width: 150px;
-  height: 48px;
-  padding: 0;
-  margin: 10px 0 0 0;
-  border: none;
-  cursor: pointer;
-}
-#arrow h2 {
-  margin: 0;
-}
-#arrow img {
-  width: 15px;
-  margin: 0 0 0 10px;
 }
 #smallbox {
   padding: 1rem;
@@ -100,6 +74,13 @@ h2 {
   background-color: #eee;
   width: calc((100% - 40px) / 2);
   margin: 10px;
+}
+#arrowcontainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 @media screen and (max-width: 840px) {
   #largebox {
@@ -122,14 +103,12 @@ h2 {
     flex-direction: column;
     align-items: flex-end;
   }
-  #box img {
-    width: 100%;
+  #boximg {
+    max-width: 100%;
+    margin: 0;
   }
   #box p {
     width: 100%;
-  }
-  #arrow img {
-    width: 15px;
   }
 }
 </style>
