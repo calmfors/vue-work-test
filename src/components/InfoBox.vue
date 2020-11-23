@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <article>
     <img
       id="boximg"
       v-if="img && windowWidth < '640'"
       :style="{ width: '100%' }"
       :src="img"
+      :alt="title"
     />
     <h2>{{ title }}</h2>
     <div id="box">
@@ -12,11 +13,11 @@
         {{ text }}
       </p>
       <div v-if="img" id="arrowcontainer">
-        <img id="boximg" v-if="windowWidth > '640'" :src="img" />
+        <img id="boximg" v-if="windowWidth > '640'" :src="img" :alt="title" />
         <read-more />
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -109,6 +110,10 @@ h2 {
   }
   #box p {
     width: 100%;
+  }
+  #arrowcontainer {
+    width: 100%;
+    align-items: center;
   }
 }
 </style>

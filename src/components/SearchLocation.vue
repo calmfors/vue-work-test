@@ -1,12 +1,14 @@
 <template>
   <form @submit.prevent="postSearchWord">
-    <label for="location"></label>
+    <label for="searchLocation" class="hidden">Sök efter stad eller land</label>
     <input
+      ref="searchField"
       type="text"
       v-model="searchWord"
+      name="searchLocation"
       placeholder="Ange stad eller land"
     />
-    <button>
+    <button ref="searchButton">
       <img src="../assets/search.svg" />
     </button>
   </form>
@@ -19,11 +21,17 @@ export default {
       searchWord: "",
     };
   },
+  mounted() {
+    console.log("created");
+    this.$refs.searchField.focus();
+  },
   emits: ["searchWord"],
   methods: {
     postSearchWord() {
       this.$emit("get-location", this.searchWord.trim().toLowerCase());
       this.searchWord = "";
+      this.$refs.searchField.blur();
+      this.$refs.searchButton.blur();
     },
   },
 };
@@ -34,7 +42,8 @@ form {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  width: calc(50% - 60px);
+  width: 100%;
+  max-width: 620px;
 }
 input {
   font-family: "Poppins", sans-serif;
@@ -54,15 +63,24 @@ form button {
   width: 60px;
   border: 0;
   background-color: #ff591d;
-  flex-grow: 0;
+  flex-shrink: 0;
   cursor: pointer;
 }
 button img {
   width: 60%;
 }
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
 @media screen and (max-width: 640px) {
   form {
-    width: calc(100% - 40px);
     margin-bottom: 10px;
   }
 }

@@ -18,7 +18,7 @@ export default {};
   color: #fff;
   width: 150px;
   height: 48px;
-  padding: 0;
+  padding: 0 10px 0 10px;
   margin: 10px 0 0 0;
   border: none;
   cursor: pointer;

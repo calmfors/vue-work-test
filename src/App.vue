@@ -50,7 +50,7 @@ export default {
       } else {
         this.choosenLocation = "";
         this.errorMessage =
-          "Inget sökresultat, testa 'London' eller 'Stockholm'.";
+          "Ingen träff. Sök efter 'London' eller 'Stockholm'.";
       }
     },
   },
@@ -105,7 +105,9 @@ footer p {
 }
 @media screen and (max-width: 640px) {
   #container {
-    padding-top: 20px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    text-align: center;
   }
 }
 </style>

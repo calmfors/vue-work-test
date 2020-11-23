@@ -60,6 +60,9 @@ h1 span {
   #infocontainer {
     flex-wrap: wrap;
   }
+  #infowrapper {
+    width: 100%;
+  }
   h1 {
     line-height: 50px;
   }
