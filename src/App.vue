@@ -101,7 +101,7 @@ footer p {
   max-width: 600px;
   padding: 0 15px 0 15px;
   overflow: hidden;
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
 }
 @media screen and (max-width: 640px) {
   #container {

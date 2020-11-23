@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 h1 {
   font-size: 48px;
   font-weight: 300;
@@ -44,12 +44,23 @@ h1 span {
   width: 1100px;
   text-align: center;
 }
-
 #infocontainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
   text-align: left;
+}
+#smallbox {
+  padding: 1rem;
+  background-color: #eee;
+  margin: 10px;
+  width: calc((100% - 40px) / 4);
+}
+#largebox {
+  padding: 1rem;
+  background-color: #eee;
+  width: calc((100% - 40px) / 2);
+  margin: 10px;
 }
 @media screen and (max-width: 1140px) {
   #infowrapper {
@@ -60,11 +71,27 @@ h1 span {
   #infocontainer {
     flex-wrap: wrap;
   }
+  #largebox {
+    flex: 1 1 100%;
+  }
+  #smallbox {
+    flex: 1 1 25%;
+  }
   #infowrapper {
     width: 100%;
   }
   h1 {
     line-height: 50px;
+  }
+}
+@media screen and (max-width: 640px) {
+  #largebox {
+    flex: 1 1 100%;
+    margin: 0 0 20px 0;
+  }
+  #smallbox {
+    flex: 1 1 100%;
+    margin: 0 0 20px 0;
   }
 }
 </style>

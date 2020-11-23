@@ -9,7 +9,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 #arrow {
   display: flex;
   align-items: center;

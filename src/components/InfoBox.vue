@@ -45,7 +45,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 h2 {
   font-weight: 600;
   font-size: 24px;
@@ -64,18 +64,6 @@ h2 {
   max-width: 90%;
   margin: 5px 0 0 20px;
 }
-#smallbox {
-  padding: 1rem;
-  background-color: #eee;
-  margin: 10px;
-  width: calc((100% - 40px) / 4);
-}
-#largebox {
-  padding: 1rem;
-  background-color: #eee;
-  width: calc((100% - 40px) / 2);
-  margin: 10px;
-}
 #arrowcontainer {
   width: 50%;
   display: flex;
@@ -83,23 +71,7 @@ h2 {
   justify-content: space-between;
   align-items: flex-end;
 }
-@media screen and (max-width: 840px) {
-  #largebox {
-    flex: 1 1 100%;
-  }
-  #smallbox {
-    flex: 1 1 25%;
-  }
-}
 @media screen and (max-width: 640px) {
-  #largebox {
-    flex: 1 1 100%;
-    margin: 0 0 20px 0;
-  }
-  #smallbox {
-    flex: 1 1 100%;
-    margin: 0 0 20px 0;
-  }
   #box {
     flex-direction: column;
     align-items: flex-end;
