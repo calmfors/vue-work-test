@@ -6,10 +6,11 @@
       type="text"
       v-model="searchWord"
       name="searchLocation"
+      id="searchLocation"
       placeholder="Ange stad eller land"
     />
     <button ref="searchButton">
-      <img src="../assets/search.svg" />
+      <img src="../assets/search.svg" alt="Sök" />
     </button>
   </form>
 </template>

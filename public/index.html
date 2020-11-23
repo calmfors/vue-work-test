@@ -14,11 +14,26 @@
   </head>
   <body>
     <noscript>
-      <strong
+      <form style="margin:20px;" action="search.php" method="get">
+        <label for="searchLocation">Sök efter stad eller land:</label>
+        <input
+          type="text"
+          name="searchLocation"
+          id="searchLocation"
+          placeholder="Ange stad eller land"
+        />
+        <button style="color:white;" type="submit" id="searchButton">
+          Sök
+        </button>
+      </form>
+      <p style="margin:20px;">
+        Tillåt javascript i webbläsaren för en bättre användarupplevelse.
+      </p>
+      <!-- <strong
         >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
         properly without JavaScript enabled. Please enable it to
         continue.</strong
-      >
+      > -->
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
