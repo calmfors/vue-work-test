@@ -1,8 +1,8 @@
 <template>
   <div>
     <main id="container">
-      <search-location @get-location="getLocation"></search-location>
-      <info-container :location="choosenLocation"></info-container>
+      <search @get-location="getLocation" />
+      <info-container :location="choosenLocation" />
       <p id="error">{{ errorMessage }}</p>
     </main>
     <footer>
@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import SearchLocation from "./components/SearchLocation.vue";
-import InfoContainer from "./components/InfoContainer.vue";
+import TheSearch from "./components/TheSearch.vue";
+import BaseInfoContainer from "./components/BaseInfoContainer.vue";
 import locations from "../locations.json";
 
 export default {
@@ -32,8 +32,8 @@ export default {
     };
   },
   components: {
-    "search-location": SearchLocation,
-    "info-container": InfoContainer,
+    search: TheSearch,
+    "info-container": BaseInfoContainer,
   },
   methods: {
     getLocation(searchWord) {

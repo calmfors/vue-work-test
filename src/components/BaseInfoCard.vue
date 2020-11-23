@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import ReadMore from "./ReadMore.vue";
+import BaseReadMore from "./BaseReadMore.vue";
 
 export default {
-  components: { "read-more": ReadMore },
+  components: { "read-more": BaseReadMore },
   data() {
     return {
       windowWidth: window.innerWidth,

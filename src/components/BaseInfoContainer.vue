@@ -11,22 +11,18 @@
         :id="info.img ? 'largebox' : 'smallbox'"
         :style="info.blue && { backgroundColor: '#1377B5', color: '#fff' }"
       >
-        <info-box
-          :title="info.title"
-          :text="info.text"
-          :img="info.img"
-        ></info-box>
+        <info-card :title="info.title" :text="info.text" :img="info.img" />
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import InfoBox from "./InfoBox.vue";
+import BaseInfoCard from "./BaseInfoCard.vue";
 
 export default {
   components: {
-    "info-box": InfoBox,
+    "info-card": BaseInfoCard,
   },
   props: ["location"],
 };
