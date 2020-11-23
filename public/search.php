@@ -5,7 +5,7 @@ Du sökte efter "<?php echo $_GET["searchLocation"]; ?>".<br>
 <?php
 
 if ($_GET["searchLocation"] == "stockholm") {
-  echo "Info om Stocholm";
+  echo "Info om Stockholm";
 }
 elseif ($_GET["searchLocation"] == "london") {
   echo "Info om London";
