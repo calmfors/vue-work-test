@@ -2,17 +2,10 @@
   <div>
     <main id="container">
       <the-search @get-location="getLocation" />
-      <info-container :location="choosenLocation" />
+      <base-info-container :location="choosenLocation" />
       <p id="error">{{ errorMessage }}</p>
     </main>
-    <footer>
-      <button @click="showInfo = !showInfo">Om tjänsten</button>
-      <p :style="{ maxHeight: showInfo ? '100px' : '0' }">
-        All information om städerna är hämtad från Wikipedia. Duis augue dolor,
-        tempus sit amet nunc eget, aliquet porttitor eros. Cras porta ac odio
-        lacinia tristique.
-      </p>
-    </footer>
+    <the-footer />
   </div>
 </template>
 
@@ -20,6 +13,7 @@
 import TheSearch from "./components/TheSearch.vue";
 import BaseInfoContainer from "./components/BaseInfoContainer.vue";
 import locations from "../locations.json";
+import TheFooter from "./components/TheFooter.vue";
 
 export default {
   name: "App",
@@ -28,12 +22,12 @@ export default {
       errorMessage: "",
       choosenLocation: "",
       locationInfo: locations,
-      showInfo: false,
     };
   },
   components: {
-    "the-search": TheSearch,
-    "info-container": BaseInfoContainer,
+    TheSearch,
+    BaseInfoContainer,
+    TheFooter,
   },
   methods: {
     getLocation(searchWord) {
@@ -86,22 +80,6 @@ footer {
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
-}
-footer button {
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  background-color: transparent;
-  border: none;
-  text-decoration: underline;
-  margin-top: 20px;
-  cursor: pointer;
-}
-footer p {
-  font-size: 14px;
-  max-width: 600px;
-  padding: 0 15px 0 15px;
-  overflow: hidden;
-  transition-duration: 0.2s;
 }
 @media screen and (max-width: 640px) {
   #container {
