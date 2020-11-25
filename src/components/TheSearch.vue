@@ -17,13 +17,13 @@
 
 <script>
 export default {
+  name: "TheSearch",
   data() {
     return {
       searchWord: "",
     };
   },
   mounted() {
-    console.log("created");
     this.$refs.searchField.focus();
   },
   emits: ["searchWord"],

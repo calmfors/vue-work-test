@@ -21,6 +21,7 @@
 import BaseInfoCard from "./BaseInfoCard.vue";
 
 export default {
+  name: "BaseInfoContainer",
   components: {
     "info-card": BaseInfoCard,
   },

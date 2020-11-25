@@ -1,19 +1,19 @@
 <template>
   <article>
     <img
+      v-if="img && mobile"
       id="boximg"
-      v-if="img && windowWidth < '640'"
-      :style="{ width: '100%' }"
+      :style="pWidth"
       :src="img"
       :alt="title"
     />
     <h2>{{ title }}</h2>
     <div id="box">
-      <p :style="img && { width: windowWidth < '640' ? '100%' : '50%' }">
+      <p :style="img && pWidth">
         {{ text }}
       </p>
       <div v-if="img" id="arrowcontainer">
-        <img id="boximg" v-if="windowWidth > '640'" :src="img" :alt="title" />
+        <img v-if="!mobile" id="boximg" :src="img" :alt="title" />
         <read-more />
       </div>
     </div>
@@ -21,9 +21,10 @@
 </template>
 
 <script>
-import BaseReadMore from "./BaseReadMore.vue";
+import BaseReadMore from "./ReadMore.vue";
 
 export default {
+  name: "BaseInfoCard",
   components: { "read-more": BaseReadMore },
   data() {
     return {
@@ -35,6 +36,14 @@ export default {
   },
   destroyed() {
     window.removeEventListener("resize", this.myEventHandler);
+  },
+  computed: {
+    mobile() {
+      return this.windowWidth < "640";
+    },
+    pWidth() {
+      return { width: this.mobile ? "100%" : "50%" };
+    },
   },
   methods: {
     myEventHandler(e) {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <main id="container">
-      <search @get-location="getLocation" />
+      <the-search @get-location="getLocation" />
       <info-container :location="choosenLocation" />
       <p id="error">{{ errorMessage }}</p>
     </main>
@@ -32,7 +32,7 @@ export default {
     };
   },
   components: {
-    search: TheSearch,
+    "the-search": TheSearch,
     "info-container": BaseInfoContainer,
   },
   methods: {
