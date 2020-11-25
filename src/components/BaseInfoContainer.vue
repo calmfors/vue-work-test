@@ -11,7 +11,7 @@
         :id="info.img ? 'largebox' : 'smallbox'"
         :style="info.blue && { backgroundColor: '#1377B5', color: '#fff' }"
       >
-        <info-card :title="info.title" :text="info.text" :img="info.img" />
+        <base-info-card :title="info.title" :text="info.text" :img="info.img" />
       </div>
     </div>
   </section>
@@ -23,7 +23,7 @@ import BaseInfoCard from "./BaseInfoCard.vue";
 export default {
   name: "BaseInfoContainer",
   components: {
-    "info-card": BaseInfoCard,
+    BaseInfoCard,
   },
   props: ["location"],
 };

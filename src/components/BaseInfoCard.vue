@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import BaseReadMore from "./ReadMore.vue";
+import ReadMore from "./ReadMore.vue";
 
 export default {
   name: "BaseInfoCard",
-  components: { "read-more": BaseReadMore },
+  components: { ReadMore },
   data() {
     return {
       windowWidth: window.innerWidth,
