@@ -1,6 +1,6 @@
 <template>
   <section id="infowrapper">
-    <h1 v-if="location.name">
+    <h1>
       Info om <span>{{ location.name }}</span>
     </h1>
 
@@ -8,8 +8,8 @@
       <div
         v-for="info in location.info"
         :key="info.title"
-        :id="info.img ? 'largebox' : 'smallbox'"
-        :style="info.blue && { backgroundColor: '#1377B5', color: '#fff' }"
+        class="box"
+        :class="{ large: info.img, bluebox: info.blue }"
       >
         <base-info-card :title="info.title" :text="info.text" :img="info.img" />
       </div>
@@ -47,17 +47,18 @@ h1 span {
   width: 100%;
   text-align: left;
 }
-#smallbox {
+.box {
   padding: 1rem;
   background-color: #eee;
   margin: 10px;
-  width: calc((100% - 40px) / 4);
+  width: calc((50% - 60px) / 2);
 }
-#largebox {
-  padding: 1rem;
-  background-color: #eee;
-  width: calc((100% - 40px) / 2);
-  margin: 10px;
+.large {
+  min-width: calc(50% - 60px);
+}
+.bluebox {
+  background-color: #1377b5;
+  color: #fff;
 }
 @media screen and (max-width: 1140px) {
   #infowrapper {
@@ -68,11 +69,11 @@ h1 span {
   #infocontainer {
     flex-wrap: wrap;
   }
-  #largebox {
-    flex: 1 1 100%;
-  }
-  #smallbox {
+  .box {
     flex: 1 1 25%;
+  }
+  .large {
+    flex: 1 1 100%;
   }
   #infowrapper {
     width: 100%;
@@ -82,11 +83,7 @@ h1 span {
   }
 }
 @media screen and (max-width: 640px) {
-  #largebox {
-    flex: 1 1 100%;
-    margin: 0 0 20px 0;
-  }
-  #smallbox {
+  .box {
     flex: 1 1 100%;
     margin: 0 0 20px 0;
   }

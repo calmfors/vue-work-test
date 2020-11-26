@@ -1,12 +1,12 @@
 <template>
-  <button id="arrow">
+  <button>
     <h2>Läs mer</h2>
-    <img id="imgarrow" src="../assets/arrow.svg" />
+    <img src="../assets/arrow.svg" />
   </button>
 </template>
 
 <style scoped>
-#arrow {
+button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,12 +18,18 @@
   margin: 10px 0 0 0;
   border: none;
   cursor: pointer;
+  margin-left: auto;
 }
-#arrow h2 {
+button h2 {
   margin: 0;
 }
-#imgarrow {
+img {
   width: 15px;
   margin: 0 0 0 10px;
+}
+@media screen and (max-width: 640px) {
+  button {
+    margin-left: 0;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <footer>
     <button @click="showInfo = !showInfo">Om tjänsten</button>
-    <p :style="setHeight">
+    <p :class="{ show: showInfo }">
       All information om städerna är hämtad från Wikipedia. Duis augue dolor,
       tempus sit amet nunc eget, aliquet porttitor eros. Cras porta ac odio
       lacinia tristique.
@@ -16,11 +16,6 @@ export default {
       showInfo: false,
     };
   },
-  computed: {
-    setHeight() {
-      return { maxHeight: this.showInfo ? "100px" : "0" };
-    },
-  },
 };
 </script>
 
@@ -31,7 +26,7 @@ button {
   background-color: transparent;
   border: none;
   text-decoration: underline;
-  margin-top: 20px;
+  margin: 5px;
   cursor: pointer;
 }
 p {
@@ -40,5 +35,10 @@ p {
   padding: 0 15px 0 15px;
   overflow: hidden;
   transition-duration: 0.2s;
+  max-height: 0;
+  height: auto;
+}
+.show {
+  max-height: 100px;
 }
 </style>
