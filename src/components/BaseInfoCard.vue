@@ -1,13 +1,13 @@
 <template>
   <article>
     <h2>{{ title }}</h2>
-    <p :style="img && pWidth">
+    <p :class="{ 'half-width': img && !mobile }">
       {{ text }}
     </p>
-    <div id="arrowcontainer" v-if="img">
-      <img id="boximg" :src="img" :alt="title" />
+    <section v-if="img">
+      <img :src="img" :alt="title" />
       <read-more v-if="!mobile" />
-    </div>
+    </section>
     <read-more v-if="mobile && img" />
   </article>
 </template>
@@ -33,9 +33,6 @@ export default {
     mobile() {
       return this.windowWidth < "640";
     },
-    pWidth() {
-      return { width: this.mobile ? "100%" : "50%" };
-    },
   },
   methods: {
     myEventHandler(e) {
@@ -59,26 +56,29 @@ h2 {
   line-height: 28px;
   margin: 10px 0 10px 0;
 }
-#boximg {
+img {
   max-width: calc(100% - 20px);
   margin: 5px 0 0 20px;
 }
-#arrowcontainer {
+section {
   max-width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
 }
+.half-width {
+  width: 50%;
+}
 @media screen and (max-width: 640px) {
   article {
     justify-content: center;
   }
-  #boximg {
+  img {
     margin: 0 0 10px 0;
     max-width: 100%;
   }
-  #arrowcontainer {
+  section {
     max-width: 100%;
     order: -1;
   }

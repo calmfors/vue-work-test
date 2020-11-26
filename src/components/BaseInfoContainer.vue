@@ -1,10 +1,10 @@
 <template>
-  <section id="infowrapper">
+  <section>
     <h1>
       Info om <span>{{ location.name }}</span>
     </h1>
 
-    <div id="infocontainer">
+    <div class="infocontainer">
       <div
         v-for="info in location.info"
         :key="info.title"
@@ -37,11 +37,11 @@ h1 {
 h1 span {
   font-weight: 600;
 }
-#infowrapper {
+section {
   width: 1100px;
   text-align: center;
 }
-#infocontainer {
+.infocontainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -61,12 +61,12 @@ h1 span {
   color: #fff;
 }
 @media screen and (max-width: 1140px) {
-  #infowrapper {
+  section {
     width: calc(100% - 40px);
   }
 }
 @media screen and (max-width: 840px) {
-  #infocontainer {
+  .infocontainer {
     flex-wrap: wrap;
   }
   .box {
@@ -75,7 +75,7 @@ h1 span {
   .large {
     flex: 1 1 100%;
   }
-  #infowrapper {
+  section {
     width: 100%;
   }
   h1 {
