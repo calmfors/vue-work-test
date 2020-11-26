@@ -9,7 +9,7 @@
         v-for="info in location.info"
         :key="info.title"
         class="box"
-        :class="{ large: info.img, bluebox: info.blue }"
+        :class="{ large: info.img, blue: info.blue }"
       >
         <base-info-card :title="info.title" :text="info.text" :img="info.img" />
       </div>
@@ -56,7 +56,7 @@ h1 span {
 .large {
   min-width: calc(50% - 60px);
 }
-.bluebox {
+.blue {
   background-color: #1377b5;
   color: #fff;
 }
