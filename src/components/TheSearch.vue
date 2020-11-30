@@ -4,7 +4,7 @@
     <input
       ref="searchField"
       type="text"
-      v-model="searchWord"
+      v-model.trim="searchWord"
       name="searchLocation"
       id="searchLocation"
       placeholder="Ange stad eller land"
@@ -29,7 +29,7 @@ export default {
   emits: ["searchWord"],
   methods: {
     postSearchWord() {
-      this.$emit("get-location", this.searchWord.trim().toLowerCase());
+      this.$emit("get-location", this.searchWord.toLowerCase());
       this.searchWord = "";
       this.$refs.searchField.blur();
       this.$refs.searchButton.blur();
